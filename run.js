@@ -16,7 +16,7 @@ const render = () => {
 }
 
 const renderMessage = (message) => {
-    orca.reset(Math.max(width, 30), Math.max(height, 4));
+    orca.reset(Math.max(width, message.length), Math.max(height, 4));
     orca.writeBlock(0, 0, message);
     render();
 }
@@ -26,7 +26,7 @@ try {
     const resource = new URLSearchParams(window.location.search).get("resource");
 
     if (!resource) {
-        throw new Error("# Missing required parameter [resource] #");
+        throw new Error("Missing required parameter :resource:");
     }
 
     const response = await fetch(resource);
@@ -61,5 +61,5 @@ try {
     orca.reset(width, height);
     orca.replace(lines.join(""));
 } catch (error) {
-    renderMessage(String(error));
+    renderMessage(`# ${String(error)} #`);
 }
