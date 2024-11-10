@@ -1,6 +1,6 @@
 import { library } from './library.js';
 
-export function Orca(library) {
+function Orca(library) {
     this.keys = '0123456789abcdefghijklmnopqrstuvwxyz'.split('')
 
     this.w = 1 // Default Width
@@ -221,4 +221,4 @@ export function Orca(library) {
     this.reset()
 }
 
-const orca = new Orca(library);
+export const orca = new Orca(library);
