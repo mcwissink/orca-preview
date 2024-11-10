@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <script src="https://unpkg.com/midi.js@0.3.1/lib/midi.js"></script>
+    <script type="module" src="./run.js"></script>
+    <title>orca</title>
+  </head>
+  <style>
+    body {
+        margin: 0;
+        font-family: monospace;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    #orca {
+        position: relative;
+        border: 1px solid black;
+        padding: 8px;
+    }
+
+    #orca.ready {
+        cursor: pointer;
+    }
+  </style>
+  <body>
+    <div id="orca"></div>
+  </body>
+</html>
